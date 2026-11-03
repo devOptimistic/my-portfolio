@@ -1,0 +1,54 @@
+<a class="skip-link" href="#main">{{ ui.skipToContent[lang()] }}</a>
+
+<div class="wrap">
+  <div class="toolbar" role="toolbar">
+    <button
+      class="btn icon-only"
+      type="button"
+      [attr.aria-label]="ui.toggleTheme[lang()]"
+      [attr.aria-pressed]="theme() === 'dark'"
+      (click)="toggleTheme()"
+    >
+      <app-icon [name]="theme() === 'dark' ? 'sun' : 'moon'" />
+    </button>
+    <button class="btn" type="button" [attr.lang]="nextLang()" (click)="toggleLanguage()">
+      <app-icon name="language" />
+      {{ ui.switchLanguage[lang()] }}
+    </button>
+    <!-- <a class="btn" href="resume.pdf" download="resume.pdf">
+      <app-icon name="print" />
+      {{ ui.savePdf[lang()] }}
+    </a> -->
+  </div>
+
+  <app-hero [profile]="resume.profile" [lang]="lang()" />
+
+  <main id="main">
+    <app-summary [title]="ui.sections.summary" [summary]="resume.summary" [lang]="lang()" />
+    <app-experience [title]="ui.sections.experience" [jobs]="resume.experience" [lang]="lang()" />
+
+    @defer (on viewport; hydrate on viewport) {
+      <app-skills [title]="ui.sections.skills" [groups]="resume.skillGroups" [lang]="lang()" />
+    } @placeholder {
+      <div class="defer-placeholder"></div>
+    }
+
+    <!-- @defer (on viewport; hydrate on viewport) {
+      <app-projects
+        [title]="ui.sections.projects"
+        [projects]="resume.projects"
+        [demoLabel]="ui.liveDemo"
+        [sourceLabel]="ui.source"
+        [lang]="lang()"
+      />
+    } @placeholder {
+      <div class="defer-placeholder"></div>
+    } -->
+
+    @defer (on viewport; hydrate on viewport) {
+      <app-education [title]="ui.sections.education" [items]="resume.education" [lang]="lang()" />
+    } @placeholder {
+      <div class="defer-placeholder"></div>
+    }
+  </main>
+</div>

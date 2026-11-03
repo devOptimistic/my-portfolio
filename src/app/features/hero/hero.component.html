@@ -1,0 +1,33 @@
+<header class="hero">
+  <div class="intro">
+    @if (profile().photo; as photo) {
+      <img class="photo" [ngSrc]="photo.src" [alt]="photoAlt()" width="400" height="400" priority />
+    }
+    <div class="intro-text">
+      <h1><app-rich-text [value]="profile().name[lang()]" /></h1>
+      <p class="role" lang="en" dir="ltr">{{ profile().title[lang()] }}</p>
+    </div>
+  </div>
+  <ul class="links">
+    @for (c of profile().contacts; track c.kind) {
+      <li>
+        @if (c.href) {
+          <a
+            class="pill"
+            [href]="c.href"
+            [attr.target]="c.kind === 'email' ? null : '_blank'"
+            rel="noopener"
+          >
+            <app-icon [name]="c.kind" />
+            <app-rich-text [value]="c.label[lang()]" />
+          </a>
+        } @else {
+          <span class="pill">
+            <app-icon [name]="c.kind" />
+            <span dir="ltr"><app-rich-text [value]="c.label[lang()]" /></span>
+          </span>
+        }
+      </li>
+    }
+  </ul>
+</header>

@@ -1,0 +1,29 @@
+<section class="card" aria-labelledby="experience-title">
+  <app-section-title id="experience-title" [text]="title()[lang()]" />
+  @for (job of jobs(); track $index) {
+    <article class="job">
+      <div class="job-head">
+        <h3 class="job-title">
+          <span lang="en" dir="ltr">{{ job.title[lang()] }}</span> —
+          <app-rich-text [value]="job.company[lang()]" />
+        </h3>
+        <div class="job-meta">{{ job.period[lang()] }}</div>
+      </div>
+      <p class="job-sub">{{ job.subtitle[lang()] }}</p>
+      <ul>
+        @for (bullet of job.bullets; track $index) {
+          <li>
+            <app-rich-text [value]="bullet.text[lang()]" />
+            @if (bullet.children; as children) {
+              <ul>
+                @for (child of children; track $index) {
+                  <li><app-rich-text [value]="child[lang()]" /></li>
+                }
+              </ul>
+            }
+          </li>
+        }
+      </ul>
+    </article>
+  }
+</section>

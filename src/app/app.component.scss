@@ -1,0 +1,50 @@
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 8px;
+  top: -48px;
+  z-index: 10;
+  background: var(--card);
+  color: var(--text);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 6px 14px;
+
+  &:focus {
+    top: 8px;
+  }
+}
+
+.defer-placeholder {
+  min-height: 160px;
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 12px 12px 48px;
+  }
+}
+
+@media print {
+  .toolbar,
+  .skip-link {
+    display: none;
+  }
+
+  .wrap {
+    padding: 0;
+    max-width: none;
+  }
+}

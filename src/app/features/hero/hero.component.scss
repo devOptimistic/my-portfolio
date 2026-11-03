@@ -1,0 +1,139 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  border-radius: 24px;
+  padding: 36px 32px;
+  background: var(--grad);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline-end: -60px;
+    top: -60px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.photo {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  /* The white ring keeps the accent border visible on the red gradient. */
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 6px 18px rgba(0, 0, 0, 0.25);
+  background: var(--card);
+  break-inside: avoid;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.3;
+}
+
+.role {
+  margin: 6px 0 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  opacity: 0.95;
+  text-align: start;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 3px 14px;
+}
+
+a.pill:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+a.pill:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .photo {
+    width: 88px;
+    height: 88px;
+  }
+
+  .hero {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media print {
+  .hero {
+    break-inside: avoid;
+    background: none;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 16px 20px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .photo {
+    box-shadow: none;
+  }
+
+  .pill {
+    color: #000;
+    background: none;
+    border-color: #ccc;
+  }
+}

@@ -1,0 +1,36 @@
+<section class="card" aria-labelledby="projects-title">
+  <app-section-title id="projects-title" [text]="title()[lang()]" />
+  <div class="projects">
+    @for (project of projects(); track project.title.en) {
+      <article class="proj">
+        <div class="shot">
+          @if (project.image; as image) {
+            <img [ngSrc]="image" [alt]="alt(project)" fill />
+          } @else {
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body"></div>
+          }
+        </div>
+        <div class="proj-body">
+          <h3><app-rich-text [value]="project.title[lang()]" /></h3>
+          <p>{{ project.description[lang()] }}</p>
+          <div class="chips">
+            @for (t of project.tech; track t.label) {
+              <app-chip [label]="t.label" [hot]="t.hot ?? false" />
+            }
+          </div>
+          <div class="proj-actions">
+            <a class="btn primary" [href]="project.demoUrl" target="_blank" rel="noopener">
+              {{ demoLabel()[lang()] }}
+              <app-icon name="external" />
+            </a>
+            <a class="btn" [href]="project.sourceUrl" target="_blank" rel="noopener">
+              {{ sourceLabel()[lang()] }}
+              <app-icon name="code" />
+            </a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

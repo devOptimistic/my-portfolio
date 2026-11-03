@@ -1,0 +1,15 @@
+<section class="card" aria-labelledby="skills-title">
+  <app-section-title id="skills-title" [text]="title()[lang()]" />
+  <div class="skills">
+    @for (group of groups(); track group.title.en) {
+      <article class="skill-card">
+        <h3>{{ group.title[lang()] }}</h3>
+        <div class="chips">
+          @for (skill of group.skills; track skill.label) {
+            <app-chip [label]="skill.label" [hot]="skill.hot ?? false" />
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

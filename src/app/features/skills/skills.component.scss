@@ -1,0 +1,35 @@
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.skill-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: var(--bg);
+  break-inside: avoid;
+
+  /* An odd group count would leave the last card alone in its row: let it span both columns. */
+  &:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 640px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
