@@ -2,17 +2,6 @@
 
 A static, prerendered (SSG) resume site built with Angular 22: standalone components, signals, zoneless, OnPush everywhere. The build output is plain HTML/JS/CSS that runs on ordinary Apache shared hosting.
 
-## Edit the content
-
-**All content lives in one file: [`src/app/data/resume.data.ts`](src/app/data/resume.data.ts).** Every string has `fa` and `en` variants; components contain no hard-coded text.
-
-- `**bold**` renders bold text.
-- `[[TODO: placeholder]]` renders a highlighted placeholder. Search the file for `TODO` to find everything still to fill in (name, email, links, phone, company, metrics, projects, education, site URL).
-- **Profile photo:** replace `public/images/profile.webp` with your own picture (keep the file name). Recommended: **400×400 px, WebP, under 50 KB**, face centred (it is shown as a circle). To hide the photo, delete the `photo` block in `profile`. Then re-run `npm run build:pdf`.
-- Project screenshots: put images in `public/images/` and set `image: 'images/my-shot.webp'` on the project. Without `image`, a gradient placeholder is shown.
-- Project links: replace the `'#'` values of `demoUrl` and `sourceUrl`.
-- `seo.url`: set this to the real address of the site (used for Open Graph and JSON-LD).
-
 ## Run locally
 
 ```bash
@@ -28,13 +17,13 @@ npm test           # unit tests (Vitest, the Angular default runner)
 npm run build      # production build + prerender
 ```
 
-## Downloadable PDF (`resume.pdf`)
+<!-- ## Downloadable PDF (`resume.pdf`)
 
 The toolbar's **Download PDF** button links to `resume.pdf`, a file committed in [`public/resume.pdf`](public/resume.pdf) and copied to the build output.
 
 ```bash
 npm run build:pdf
-```
+``` -->
 
 This builds the site, renders the **Persian** page with the print stylesheet (A4, light theme, no background graphics, self-hosted Vazirmatn) using headless Chrome via `playwright-core`, and overwrites `public/resume.pdf`. It uses an installed Chrome or Edge (no browser download).
 
