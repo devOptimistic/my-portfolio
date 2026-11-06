@@ -33,7 +33,7 @@
       <div class="defer-placeholder"></div>
     }
 
-    <!-- @defer (on viewport; hydrate on viewport) {
+    @defer (on viewport; hydrate on viewport) {
       <app-projects
         [title]="ui.sections.projects"
         [projects]="resume.projects"
@@ -43,7 +43,7 @@
       />
     } @placeholder {
       <div class="defer-placeholder"></div>
-    } -->
+    }
 
     @defer (on viewport; hydrate on viewport) {
       <app-education [title]="ui.sections.education" [items]="resume.education" [lang]="lang()" />

@@ -9,6 +9,7 @@ import { HeroComponent } from './features/hero/hero.component';
 import { SkillsComponent } from './features/skills/skills.component';
 import { SummaryComponent } from './features/summary/summary.component';
 import { IconComponent } from './shared/icon/icon.component';
+import { ProjectsComponent } from './features/projects/projects.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { IconComponent } from './shared/icon/icon.component';
     IconComponent,
     SkillsComponent,
     SummaryComponent,
-  ],
+    ProjectsComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

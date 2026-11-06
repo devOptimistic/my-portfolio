@@ -10,15 +10,15 @@ import { Resume } from '../models/resume.models';
 export const RESUME: Resume = {
   seo: {
     title: {
-      fa: 'رزومه | Senior Angular Developer',
-      en: 'Resume | Senior Angular Developer',
+      fa: 'محمدجواد بیاتانی',
+      en: 'Mohammad Javad Bayatani',
     },
     description: {
       fa: 'رزومه‌ی توسعه‌دهنده‌ی ارشد فرانت‌اند (Angular) با بیش از ۵ سال تجربه در اپلیکیشن‌های سازمانی.',
       en: 'Resume of a Senior Frontend Developer (Angular) with 5+ years of enterprise experience.',
     },
     // TODO: replace with the real address where the site will be hosted
-    url: 'https://example.com/',
+    url: 'https://mohammadbayatani.ir/',
   },
 
   profile: {
@@ -246,35 +246,42 @@ export const RESUME: Resume = {
   // (for example 'images/project-1.webp'). Replace '#' with the real demo and source URLs.
   projects: [
     {
-      title: { fa: '[[TODO: نام پروژه ۱]]', en: '[[TODO: Project 1]]' },
-      description: {
-        fa: 'توضیح کوتاه یک‌ تا دو خطی درباره‌ی پروژه و مشکلی که حل می‌کند.',
-        en: 'One or two lines about the project and the problem it solves.',
+      "title": { "fa": "فین‌ترک (FinTrack)", "en": "FinTrack" },
+      "description": {
+        "fa": "یک داشبورد مدیریت مالی شخصی (SaaS) برای ثبت، دسته‌بندی و تحلیل درآمد و هزینه‌ها، همراه با سیستم تعیین بودجه و پیگیری اهداف پس‌انداز.",
+        "en": "A personal finance management SaaS dashboard for tracking, categorizing, and analyzing income and expenses, featuring budgeting and savings goal tracking."
       },
-      tech: [{ label: 'Angular 22', hot: true }, { label: 'Signals' }, { label: 'TypeScript' }],
-      demoUrl: '#',
-      sourceUrl: '#',
+      "image":"images/fin-track-demo.jpg",
+      "tech": [
+        { "label": "Angular 22", "hot": true },
+        { "label": "Signals", "hot": true },
+        { "label": "Standalone", "hot": true },
+        { "label": "Tailwind CSS" },
+        { "label": "TypeScript" }
+      ],
+      "demoUrl": "https://fin-track.mohammadbayatani.ir",
+      "sourceUrl": "https://github.com/devOptimistic/fin-track"
     },
-    {
-      title: { fa: '[[TODO: نام پروژه ۲]]', en: '[[TODO: Project 2]]' },
-      description: {
-        fa: 'توضیح کوتاه یک‌ تا دو خطی درباره‌ی پروژه و مشکلی که حل می‌کند.',
-        en: 'One or two lines about the project and the problem it solves.',
-      },
-      tech: [{ label: 'Angular 22', hot: true }, { label: 'NgRx SignalStore' }, { label: 'SCSS' }],
-      demoUrl: '#',
-      sourceUrl: '#',
-    },
-    {
-      title: { fa: '[[TODO: نام پروژه ۳]]', en: '[[TODO: Project 3]]' },
-      description: {
-        fa: 'توضیح کوتاه یک‌ تا دو خطی درباره‌ی پروژه و مشکلی که حل می‌کند.',
-        en: 'One or two lines about the project and the problem it solves.',
-      },
-      tech: [{ label: 'Angular 22', hot: true }, { label: 'RxJS' }, { label: 'Tailwind' }],
-      demoUrl: '#',
-      sourceUrl: '#',
-    },
+    // {
+    //   title: { fa: '[[TODO: نام پروژه ۲]]', en: '[[TODO: Project 2]]' },
+    //   description: {
+    //     fa: 'توضیح کوتاه یک‌ تا دو خطی درباره‌ی پروژه و مشکلی که حل می‌کند.',
+    //     en: 'One or two lines about the project and the problem it solves.',
+    //   },
+    //   tech: [{ label: 'Angular 22', hot: true }, { label: 'NgRx SignalStore' }, { label: 'SCSS' }],
+    //   demoUrl: '#',
+    //   sourceUrl: '#',
+    // },
+    // {
+    //   title: { fa: '[[TODO: نام پروژه ۳]]', en: '[[TODO: Project 3]]' },
+    //   description: {
+    //     fa: 'توضیح کوتاه یک‌ تا دو خطی درباره‌ی پروژه و مشکلی که حل می‌کند.',
+    //     en: 'One or two lines about the project and the problem it solves.',
+    //   },
+    //   tech: [{ label: 'Angular 22', hot: true }, { label: 'RxJS' }, { label: 'Tailwind' }],
+    //   demoUrl: '#',
+    //   sourceUrl: '#',
+    // },
   ],
 
   education: [
